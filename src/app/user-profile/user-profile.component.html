@@ -1,0 +1,62 @@
+<div class="outer-container">
+    <div class="part-container">
+        <img style="align-self: center; clip-path: circle();" height="150px" width="150px"
+            [src]="informationObj.avatar_url">
+    </div>
+    <div class="part-container">
+        <span class="main-element value-element">
+            <strong> Name</strong> : {{informationObj.name}}
+        </span>
+        <span class="main-element value-element">
+            <strong> Bio</strong> : {{informationObj.bio}}
+        </span>
+        <span class="main-element value-element">
+            <strong> User Location</strong> : {{informationObj.location ? informationObj.location : "--" }}
+        </span>
+        <span class="main-element value-element">
+            <strong> Followers</strong> : {{informationObj.followers ? informationObj.followers : 0 }} ,
+            <strong> Following</strong> : {{informationObj.following ? informationObj.following : 0 }}
+        </span>
+        <span class="last-value main-element value-element">
+            <strong> User id </strong> : {{informationObj.login}}
+        </span>
+
+    </div>
+</div>
+<div class="outer-container">
+    <div class="panel">
+        <span class="value-element">
+            <strong> Created At</strong> : {{informationObj.created_at ?
+            formatDate(informationObj.created_at) : "--" }}
+        </span>
+        <span class="value-element">
+            <strong> Updated At</strong> : {{informationObj.updated_at ?
+            formatDate(informationObj.updated_at) : "--" }}
+        </span>
+        <span class="value-element">
+            <strong> Public Repositories</strong> : {{informationObj.public_repos}}
+        </span>
+        <span class="value-element last-value">
+            <strong> Public Gists</strong> : {{informationObj.public_gists}}
+        </span>
+    </div>
+    <div class="vl"></div>
+    <div class="panel">
+        <span class="value-element">
+            <strong> Company</strong> : {{informationObj.company ?
+            (informationObj.company) : "--" }}
+        </span>
+        <span class="value-element">
+            <strong> Blog url</strong> : <a> {{informationObj.blog ?
+                (informationObj.blog) : "--" }}</a>
+        </span>
+        <span class="value-element">
+            <strong> Github profile Link</strong> : <a> {{informationObj.html_url ?
+                (informationObj.html_url) : "--" }}</a>
+        </span>
+        <span class="value-element">
+            <strong> Email Id</strong> : {{informationObj.email ?
+            (informationObj.email) : "--" }}
+        </span>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="input-search">
+    <div class="form-group">
+        <input [(ngModel)]="userValue" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Search User">
+    </div>
+    <button (click)="onUserIdSearch()" type="submit" class="btn-style btn btn-primary">Submit</button>
+    <button (click)="markFavourite()" type="submit" class="btn-style btn btn-primary">Mark as Favourite</button>
+</div>
+<app-user-profile *ngIf="informationObj.login" [informationObj]="informationObj"></app-user-profile>

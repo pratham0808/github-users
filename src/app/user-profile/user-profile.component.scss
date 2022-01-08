@@ -1,0 +1,41 @@
+.outer-container {
+    display: flex;
+    border-style: solid;
+    border-width: 1px;
+    margin: 5px;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.value-element {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.vl {
+    border-left: 2px solid black;
+  }
+
+.last-value {
+    margin-bottom: 15px;
+}
+
+.main-element {
+    align-self: center;
+}
+
+.part-container {
+    display: flex;
+    margin: 5px;
+    flex-grow: 1; 
+    flex-direction: column; 
+    justify-content: center;
+}
+
+a {
+    color: blue!important;
+}

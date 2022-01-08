@@ -1,0 +1,73 @@
+.sidebar {
+    height: 100%;
+    position: fixed;
+    width: 200px;
+    background-color: aliceblue;
+    overflow-x: hidden;
+    transition: 0.5s;
+    white-space: nowrap;
+    /* box-shadow: 3px 3px 10px 2px #ccc; */
+  }
+  
+  .sidebar-option {
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    padding-left: 10px;
+  }
+
+  .sidebar-option-selected {
+    color: black;
+  }
+    
+
+  
+  .icon-text {
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  
+  .material-icons {
+    padding-bottom: 3px;
+  }
+  
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  
+  @media screen and (max-height: 450px) {
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+  
+  
+  .refresh-contact-parent-options {
+    padding-left: 10px;
+  }
+  
+
+  .company-parent-options {
+    padding-left: 10px;
+  }
+  
+  #mySidebar {
+    //box-shadow: -1px 0 5px 0 #555;
+    box-shadow: -1px 10px 5px rgb(114, 113, 113);
+  }
+  
+  .font-icon-style {
+    font-size: 16px;
+    margin-right: 3px;
+  }
+  
+  .pdt-10  {
+    padding-top: 10px;
+  }
+  
+  a {
+    color: black;
+  }
+  
+  

@@ -1,0 +1,32 @@
+<div *ngIf="!informationObj.login" style="margin-top: 10px;" class="container-fluid">
+    <div style="display: flex; justify-content: space-between;">
+        <p>Search History</p>
+        <div (click)="clearAll()" class="hover-style" style="margin-right: 30px;">
+            <i  class="fas fa-trash-alt"></i> Clear Searches
+        </div>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Favourites</th>
+                <th scope="col">User Id</th>
+                <th scope="col">Is Sucessful</th>
+                <th scope="col">Clear Search</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr (click)="onUserIdSearch(searchItem.userid)" *ngFor="let searchItem of pastSearches">
+                <th><i (click)="markFavourite($event,searchItem)" [ngClass]="{'checked': searchItem.isFavourite}"
+                        class="fa fa-star"></i></th>
+                <td>{{searchItem.userid}}</td>
+                <td>{{searchItem.isSucessful}}</td>
+                <td><i (click)="deleteItem($event,searchItem.userid)" class="fas fa-trash-alt"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="informationObj.login" style="margin-top: 10px;" class="container-fluid">
+    <h2 class="hover-style" (click)="goBack()"><i class="fas fa-angle-double-left"></i>Go back</h2>
+    <app-user-profile [informationObj]="informationObj"></app-user-profile>
+</div>

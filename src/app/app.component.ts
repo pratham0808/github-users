@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'github-users';
+
+  ngOnInit() {
+    let pastSearches : any = localStorage.getItem("pastSearches");
+    if(!pastSearches) {
+      localStorage.setItem("pastSearches", JSON.stringify([]));
+    }
+  }
 }
