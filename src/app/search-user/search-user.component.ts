@@ -35,9 +35,7 @@ export class SearchUserComponent implements OnInit {
           }
         });
     } else {
-      this.toastr.error("Please first select user", '', {
-        positionClass: 'toast-bottom-center'
-      });
+      this.toastr.error("Please select user first");
     }
   }
 

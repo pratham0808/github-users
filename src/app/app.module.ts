@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { LoaderComponent } from './loader/loader.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
 import { SearchUserComponent } from './search-user/search-user.component';
 import { SearchHistoryComponent } from './search-history/search-history.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -21,7 +20,6 @@ import { ToastrModule } from 'ngx-toastr';
     AppComponent,
     LoaderComponent,
     SideBarComponent,
-    HomeComponent,
     SearchUserComponent,
     SearchHistoryComponent,
     UserProfileComponent
