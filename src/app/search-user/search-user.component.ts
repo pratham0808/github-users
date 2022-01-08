@@ -27,14 +27,10 @@ export class SearchUserComponent implements OnInit {
           next: (data) => {
             this.informationObj = data;
             this.addEntry(true);
-            this.toastr.success("Sucessfully fetched User", '', {
-              positionClass: 'toast-bottom-center'
-            });
+            this.toastr.success("Sucessfully fetched User");
           },
           error: error => {
-            this.toastr.error(error.error.message, '', {
-              positionClass: 'toast-bottom-center'
-            });
+            this.toastr.error(error.error.message);
             this.addEntry(false);
           }
         });
@@ -68,14 +64,10 @@ export class SearchUserComponent implements OnInit {
       if (user) {
         user.isFavourite = true;
         localStorage.setItem("pastSearches", JSON.stringify(pastSearches));
-        this.toastr.success("Sucessfully added as favourite", '', {
-          positionClass: 'toast-bottom-center'
-        });
+        this.toastr.success("Sucessfully added as favourite");
       }
     } else {
-      this.toastr.error("Please first select user", '', {
-        positionClass: 'toast-bottom-center'
-      });
+      this.toastr.error("Please first select user");
     }
   }
 

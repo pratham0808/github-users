@@ -1,6 +1,17 @@
 <div *ngIf="!informationObj.login" style="margin-top: 10px;" class="container-fluid">
-    <div style="display: flex; justify-content: space-between;">
-        <p>Search History</p>
+    <div style="margin-bottom: 10px; display: flex; justify-content: space-between;">
+        <h2> Search History</h2>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" 
+            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort By
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li (click)="onSortUserId()" ><a class="dropdown-item" >User Id</a></li>
+              <li (click)="onSortFavouriteAsc()" ><a class="dropdown-item">Favourite first</a></li>
+              <li (click)="onSortFavouriteDesc()" ><a class="dropdown-item">Favourite Last </a></li>
+            </ul>
+          </div>
         <div (click)="clearAll()" class="hover-style" style="margin-right: 30px;">
             <i  class="fas fa-trash-alt"></i> Clear Searches
         </div>

@@ -15,11 +15,7 @@ export class SearchHistoryComponent implements OnInit {
 
   pastSearches: any = [];
   informationObj: any = {};
-  foods = [
-    { value: 'steak-0', viewValue: 'Steak' },
-    { value: 'pizza-1', viewValue: 'Pizza' },
-    { value: 'tacos-2', viewValue: 'Tacos' },
-  ];
+
 
   ngOnInit(): void {
     this.pastSearches = localStorage.getItem("pastSearches");
@@ -34,9 +30,7 @@ export class SearchHistoryComponent implements OnInit {
           this.informationObj = data;
         },
         error: error => {
-          this.toastr.error(error.error.message, '', {
-            positionClass: 'toast-bottom-center'
-          });
+          this.toastr.error(error.error.message);
 
         }
       });
@@ -48,9 +42,7 @@ export class SearchHistoryComponent implements OnInit {
     pastSearches = JSON.parse(pastSearches);
     pastSearches = pastSearches.filter(item => item.userid !== userid);
     localStorage.setItem("pastSearches", JSON.stringify(pastSearches));
-    this.toastr.success("Sucessfully Deleted Userid", '', {
-      positionClass: 'toast-bottom-center'
-    });
+    this.toastr.success("Sucessfully Deleted Userid");
     this.pastSearches = localStorage.getItem("pastSearches");
     this.pastSearches = JSON.parse(this.pastSearches);
   }
@@ -62,9 +54,7 @@ export class SearchHistoryComponent implements OnInit {
     let user = pastSearches.find((ele) => { return ele.userid === userObj.userid });
     user.isFavourite = !user.isFavourite;
     localStorage.setItem("pastSearches", JSON.stringify(pastSearches));
-    this.toastr.success("Sucessfully changed", '', {
-      positionClass: 'toast-bottom-center'
-    });
+    this.toastr.success("Sucessfully changed");
     this.pastSearches = localStorage.getItem("pastSearches");
     this.pastSearches = JSON.parse(this.pastSearches);
   }
@@ -77,9 +67,23 @@ export class SearchHistoryComponent implements OnInit {
     localStorage.setItem("pastSearches", JSON.stringify([]));
     this.pastSearches = localStorage.getItem("pastSearches");
     this.pastSearches = JSON.parse(this.pastSearches);
-    this.toastr.success("Sucessfully cleared All searches", '', {
-      positionClass: 'toast-bottom-center'
-    });
+    this.toastr.success("Sucessfully cleared All searches");
   }
 
+  onSortUserId() {
+    this.pastSearches.sort((a, b) => a.userid.localeCompare(b.userid));
+    this.toastr.success("Sucessfully sorted By userid");
+  }
+
+  onSortFavouriteDesc() {
+
+    this.pastSearches.sort((a, b) => { return a.isFavourite - b.isFavourite });
+    this.toastr.success("Sucessfully sorted By Favourite");
+
+  }
+
+  onSortFavouriteAsc() {
+    this.pastSearches.sort((a, b) => { return b.isFavourite - a.isFavourite });
+    this.toastr.success("Sucessfully sorted By Favourite");
+  }
 }
