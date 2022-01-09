@@ -47,12 +47,12 @@
             (informationObj.company) : "--" }}
         </span>
         <span class="value-element">
-            <strong> Blog url</strong> : <a> {{informationObj.blog ?
-                (informationObj.blog) : "--" }}</a>
+            <strong> Blog url</strong> : <a (click)="redirect(informationObj.blog)"> 
+                {{informationObj.blog ?(informationObj.blog) : "--" }}</a>
         </span>
         <span class="value-element">
-            <strong> Github profile Link</strong> : <a> {{informationObj.html_url ?
-                (informationObj.html_url) : "--" }}</a>
+            <strong> Github profile Link</strong> : <a (click)="redirect(informationObj.html_url)">
+                 {{informationObj.html_url ? (informationObj.html_url) : "--" }}</a>
         </span>
         <span class="value-element">
             <strong> Email Id</strong> : {{informationObj.email ?

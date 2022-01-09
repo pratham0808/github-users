@@ -2,7 +2,9 @@
     display: flex;
     border-style: solid;
     border-width: 1px;
+    border-color: #6c757d;
     margin: 5px;
+    box-shadow: -1px 1px 4px #727171;
 }
 
 .panel {
@@ -17,7 +19,9 @@
 }
 
 .vl {
-    border-left: 2px solid black;
+    border-left: 2px solid #adb5bd;
+    margin-top: 7px;
+    margin-bottom: 7px;
   }
 
 .last-value {

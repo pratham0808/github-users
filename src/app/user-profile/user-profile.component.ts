@@ -18,4 +18,10 @@ export class UserProfileComponent implements OnInit {
   formatDate(date) {
     return moment(date).format("DD MM YYYY");
   }
+
+  redirect(url) {
+    if(url) {
+      window.open(url);
+    }
+  }
 }
